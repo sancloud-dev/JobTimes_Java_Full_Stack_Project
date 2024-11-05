@@ -32,7 +32,7 @@ public class SignInRecruiter extends HttpServlet {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, "root", "Safi@2002");
+			Connection con = DriverManager.getConnection(url, "root", "password");
 			
 			PreparedStatement ps = con.prepareStatement("select * from recruiters where username=? and password=? and authorized=?");
 			ps.setString(1, uname);

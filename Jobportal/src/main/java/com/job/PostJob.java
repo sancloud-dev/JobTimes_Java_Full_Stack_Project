@@ -29,7 +29,7 @@ public class PostJob extends HttpServlet {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, "root", "Safi@2002");
+			Connection con = DriverManager.getConnection(url, "root", "password");
 			
 			PreparedStatement ps = con.prepareStatement("insert into jobs(jobid, role, compname, location, visa, comp, jd) values(?, ?, ?, ?, ?, ?, ?)");
 			ps.setInt(1, rid);

@@ -131,7 +131,7 @@
         </tr>
       </thead>
 
-		<sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/jobportal?useTimeZone=true&serverTimezone=UTC" user="root" password="Safi@2002"/>
+		<sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/jobportal?useTimeZone=true&serverTimezone=UTC" user="root" password="password"/>
 		
 		<sql:query var="rs" dataSource="${db}">select jobid, role, compname, location, visa, comp, jd from jobs</sql:query>
 		

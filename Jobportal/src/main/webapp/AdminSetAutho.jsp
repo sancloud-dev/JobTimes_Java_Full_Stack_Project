@@ -21,7 +21,7 @@
 			int a = Integer.parseInt(request.getQueryString());
 			String url = "jdbc:mysql://localhost:3306/jobportal?useTimeZone=true&serverTimezone=UTC";
 			String username = "root";
-			String password = "Safi@2002";
+			String password = "password";
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = null;
