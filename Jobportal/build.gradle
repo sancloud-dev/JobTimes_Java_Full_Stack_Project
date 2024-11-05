@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'mysql:mysql-connector-java:8.0.32'
+    implementation 'org.springframework:spring-webmvc:5.3.9'
+    implementation 'org.springframework:spring-context:5.3.9'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+ 
+war {
+    archiveFileName = 'JobTimes.war'
+    from('src/main/webapp') {
+        into('/')
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE // Exclude duplicates in webapp files
+    }
+
+    // Include runtime dependencies
+    configurations.runtimeClasspath.each { file ->
+        if (file.isDirectory()) {
+            from(file) {
+                duplicatesStrategy = DuplicatesStrategy.EXCLUDE // Exclude duplicates in lib files
+            }
+        } else {
+            from(zipTree(file)) {
+                duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+            }
+    
+        }
+    }
+    
+}
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+}

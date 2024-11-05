@@ -33,7 +33,7 @@ public class SignInCandidate extends HttpServlet {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, "root", "Safi@2002");
+			Connection con = DriverManager.getConnection(url, "root", "password");
 			
 			Statement st = con.createStatement();
 			

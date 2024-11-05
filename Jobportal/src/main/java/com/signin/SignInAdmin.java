@@ -30,7 +30,7 @@ public class SignInAdmin extends HttpServlet {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, "root", "Safi@2002");
+			Connection con = DriverManager.getConnection(url, "root", "password");
 			PreparedStatement ps = con.prepareStatement("select * from admin where username=? and pass=?");
 			ps.setString(1, uname);
 			ps.setString(2, password);
